@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "7f2f5fff-7823-47b1-966d-13692c43cc4d",
+		"name": "accuweather",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24371688"
+	},
+	"item": [
+		{
+			"name": "get Region List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/locations/v1/regions",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"locations",
+						"v1",
+						"regions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Country List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/locations/v1/countries/{{region_code}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"locations",
+						"v1",
+						"countries",
+						"{{region_code}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Area List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/locations/v1/adminareas/{{region_code}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"locations",
+						"v1",
+						"adminareas",
+						"{{region_code}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Postal Code Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/locations/v1/postalcodes/search?q={{postal_code}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"locations",
+						"v1",
+						"postalcodes",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{{postal_code}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 Day of Daily Forecasts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/forecasts/v1/daily/1day/{{location_key}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"forecasts",
+						"v1",
+						"daily",
+						"1day",
+						"{{location_key}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5 Days of Daily Forecasts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/forecasts/v1/daily/5day/{{location_key}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"forecasts",
+						"v1",
+						"daily",
+						"5day",
+						"{{location_key}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12 Hours of Hourly Forecasts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/forecasts/v1/hourly/12hour/{{location_key}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"forecasts",
+						"v1",
+						"hourly",
+						"12hour",
+						"{{location_key}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Current Conditions for Top Cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/currentconditions/v1/topcities/50",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"currentconditions",
+						"v1",
+						"topcities",
+						"50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15 Days of Daily Index Values for a Group of Indices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/imagery/v1/maps/radsat/480x480/{{location_key}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"imagery",
+						"v1",
+						"maps",
+						"radsat",
+						"480x480",
+						"{{location_key}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "pM8OATxNHIhGF4snEoAsFLoHORN4U2VJ",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "apikey",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "postal_code",
+			"value": "T9S"
+		}
+	]
+}
